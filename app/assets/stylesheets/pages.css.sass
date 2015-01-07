@@ -1,0 +1,153 @@
+@import url("http://fonts.googleapis.com/css?family=Voltaire")
+
+html, body
+  height: 100%
+  width: 100%
+  font-family: Arial,sans-serif
+
+
+.row
+  margin: 0
+  padding: 0
+
+
+h1, h2, h3, h4, .lead, .btn, .navbar a
+  text-transform: uppercase
+  font-family: 'Voltaire',Arial,sans-serif
+  letter-spacing: 2px
+
+h1
+  font-size: 50px
+
+
+img.grayscale
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale")
+  filter: gray
+  -webkit-filter: grayscale(100%)
+
+.icon-bar
+  background-color: #fff
+
+.scroll-down a, .scroll-top a
+  color: #ffffff
+
+.scroll-down
+  position: fixed
+  bottom: 20%
+  right: 0%
+  color: #f9f9f9
+
+.scroll-top
+  background-color: #dbdbdb
+
+.vert
+  vertical-align: middle
+  width: 100%
+  padding-top: 4%
+  text-align: center
+
+.header .btn-lg
+  font-size: 28px
+  border-color: #eeeeee
+  padding: 15px
+  background-color: transparent
+  color: #ffffff
+  &:hover
+    background-color: #eeeeee
+    color: #777777
+
+.navbar a
+  color: #fff
+  font-size: 14px
+  background-color: #222334
+
+.navbar-bold
+  &.affix
+    background-color: #222334
+  background-color: #222334
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif
+  li
+    a:hover, &.active
+      background-color: #d46054
+
+.header
+  h1
+    font-size: 80px
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1)
+    color: #431a6d
+    color: #fff
+    margin-left: -5px
+    margin-bottom: 5px
+    text-transform: uppercase
+  .lead
+    color: #d46054
+    font-size: 25px
+  height: 80%
+  background: #f68076 url('http://www.bootply.com/assets/example/pt_topo_l.png') repeat center center fixed
+
+
+.alt
+  background-color: #222334
+  .lead
+    color: white
+  &.affix
+    background-color: #222334
+  li
+    a:hover, &.active
+      background-color: #5D17BA
+
+.blurb
+  padding: 120px 0
+  background-color: #fefefe
+  .panel
+    background-color: transparent
+
+.bright
+  background: #dbdbdb url('http://www.bootply.com/assets/example/pt_topo.png') repeat center center fixed
+  color: #777
+
+.featurette
+  background: #222334
+  padding: 50px 0
+  color: #ffffff
+
+.featurette-item
+  margin-bottom: 15px
+  > i
+    border: 3px solid #ffffff
+    border-radius: 50%
+    display: inline-block
+    font-size: 56px
+    width: 140px
+    height: 140px
+    line-height: 136px
+    vertical-align: middle
+    text-align: center
+    &:hover
+      font-size: 68px
+
+.callout
+  color: #ffffff
+  padding-top: 7%
+  height: 100%
+  width: 100%
+  background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+
+.gallery
+  padding: 50px 0
+
+.call-to-action
+  background: #eeeeee
+  padding: 50px 0
+  .btn
+    margin: 10px
+
+#mission
+  margin-top: 15px
+
+footer
+  padding: 0px 0
