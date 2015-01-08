@@ -9,7 +9,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 gem 'devise-bootstrap-views'
-gem 'simple_form'
+gem 'rails4-autocomplete'
 
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -17,3 +17,4 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'spring',        group: :development
+gem 'pry-rails', :group => :development
