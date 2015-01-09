@@ -56,7 +56,7 @@
                       <% @messages.each do |m| %>
                         <li>
                           <a href="<%= root_path %>">
-                            <span class="mail-sender"><%= User.where(id: m.sender_id).first.first_name %></span>
+                            <span class="mail-sender"><%= first_and_last(m.sender_id) %></span>
                             <span class="mail-subject"><%= m.subject %></span>
                             <span class="mail-message-preview"><%= m.body.truncate(10) %>...</span>
                           </a>
@@ -102,41 +102,16 @@
                    <input type="search" placeholder="Search Mail" class="form-control mail-search" />
                    
                    <ul class="mail-list">
-                       <li>
-                           <a href="">
-                               <span class="mail-sender">You Tube</span>
-                               <span class="mail-subject">New subscribers!</span>
-                               <span class="mail-message-preview">You have ten more subscriptions click her...</span>
-                           </a>
-                       </li>
-                       <li>
-                           <a href="">
-                               <span class="mail-sender">You Tube</span>
-                               <span class="mail-subject">New subscribers!</span>
-                               <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                           </a>
-                       </li>
-                       <li>
-                           <a href="">
-                               <span class="mail-sender">You Tube</span>
-                               <span class="mail-subject">New subscribers!</span>
-                               <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                           </a>
-                       </li>
-                       <li>
-                           <a href="">
-                               <span class="mail-sender">You Tube</span>
-                               <span class="mail-subject">New subscribers!</span>
-                               <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                           </a>
-                       </li>
-                       <li>
-                           <a href="">
-                               <span class="mail-sender">You Tube</span>
-                               <span class="mail-subject">New subscribers!</span>
-                               <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                           </a>
-                       </li>
+                      <% @sent.each do |m| %>
+                        <li>
+                          <a href="<%= root_path %>">
+                            <span class="mail-sender"><%= first_and_last(m.receiver_id) %></span>
+                            <span class="mail-subject"><%= m.subject %></span>
+                            <span class="mail-message-preview"><%= m.body.truncate(10) %>...</span>
+                          </a>
+                        </li>
+                      <% end %>   
+                       
                    </ul>
                </div>
            </div>
