@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :messages do
     get :sent, on: :collection
     get :archive, on: :collection
+    get :ajax_archive, on: :collection
   end
 
   authenticated :user do

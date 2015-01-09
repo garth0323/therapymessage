@@ -36,6 +36,9 @@ class MessagesController < ApplicationController
     @archive = Message.where(receiver_id: current_user.id, archived: true).order("created_at DESC")
   end
 
+  def ajax_archive
+    Message.where(id: params[:id]).update_all(archived: true)
+  end
 
 
   private

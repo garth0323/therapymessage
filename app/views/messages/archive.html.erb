@@ -22,7 +22,7 @@
                 <% @archive.each do |m| %>
                   <li>
                     <a href="<%= message_path(m) %>">
-                      <span class="mail-sender"><%= first_and_last(m.receiver_id) %></span>
+                      <span class="mail-sender"><%= first_and_last(m.sender_id) %></span>
                       <span class="mail-subject"><%= m.subject %></span>
                       <span class="mail-message-preview"><%= m.body.truncate(10) %>...</span>
                     </a>
