@@ -10,8 +10,13 @@
             <%= f.collection_select :receiver_id, Provider.order(:first_name), :id, :name_and_email, :prompt => "Choose Your Therapist" %>
           </div>
         <% else %>
-          <div class="form-group">
-          <%= f.text_field :receiver_id, class: "form-control", placeholder: "Clients email" %>
+          <% if @receiver == nil%>
+            <div class="form-group">
+              <%= f.text_field :receiver_id, class: "form-control", placeholder: "Clients email" %>
+          <% else %>
+            <div class="form-group">
+              <%= f.text_field :receiver_id, class: "form-control", value: @receiver %>
+          <% end %>
         </div>
         <% end %>
         <div class="form-group">
@@ -20,7 +25,7 @@
           <%= f.text_area :body, class: "form-control", placeholder: "Message" %>
           <%= f.hidden_field :sender_id, value: current_user.id %>
         <div class="btn-send">
-          <%= f.submit :Send, class: "btn btn-success btn-lg" %>
+          <%= f.submit :Send, class: "btn btn-danger btn-lg" %>
         </div>
       <% end %>
     </div>

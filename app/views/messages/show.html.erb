@@ -4,11 +4,17 @@
 <div class="container">
   <div class="content-container clearfix">
     <div class="col-md-12">
-      <h1 class="content-title">Message</h1>
-      <a href=""><span class="glyphicon glyphicon-share-alt">Reply</span></a>
-      <%= link_to ajax_archive_messages_path(id: @message.id), remote: true do %>
-        <span class="glyphicon glyphicon-trash pull-right">Archive</span> 
+      <% if @message.sender_id != current_user.id %>
+        <%= link_to new_message_path(receiver_id: @message.sender_id) do %>
+          <span class="glyphicon glyphicon-share-alt">Reply</span>
+        <% end %>
       <% end %>
+      <% if @message.archived == false %>
+        <%= link_to ajax_archive_messages_path(id: @message.id), remote: true do %>
+          <span class="glyphicon glyphicon-trash pull-right">Archive</span> 
+        <% end %>
+      <% end %>
+      <h1 class="content-title">Message</h1>
         <form class="form-horizontal">
           <div class="form-group">
             <label class="col-sm-2 control-label">Sender</label>

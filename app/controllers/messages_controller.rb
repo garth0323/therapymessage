@@ -14,13 +14,16 @@ class MessagesController < ApplicationController
   end
 
   def new
+    if params[:receiver_id].present?
+      @receiver = User.where(id: params[:receiver_id]).pluck(:email).first
+    end
     @message = Message.new
   end
 
   def create
-    if current_user == "Provider"
-      receiver_id = User.where(email: params[:receiver_id]).first.receiver_id
-      @message = Message.create(message_params).merge(receiver_id: receiver_id)
+    if current_user.type == "Provider"
+      receiver_id = User.where(email: params[:message][:receiver_id]).first.id
+      @message = Message.create(body: params[:message][:body], subject: params[:message][:subject], sender_id: params[:message][:sender_id], receiver_id: receiver_id)
     else
       @message = Message.create(message_params)
     end
