@@ -55,7 +55,7 @@
                    <ul class="mail-list">                       
                       <% @messages.each do |m| %>
                         <li>
-                          <a href="<%= root_path %>">
+                          <a href="<%= message_path(m) %>">
                             <span class="mail-sender"><%= first_and_last(m.sender_id) %></span>
                             <span class="mail-subject"><%= m.subject %></span>
                             <span class="mail-message-preview"><%= m.body.truncate(10) %>...</span>
@@ -75,9 +75,15 @@
         <h1 class="content-title">Compose</h1>
         <div class="col-md-12">
           <%= form_for @message do |f| %>
-            <div class="form-group">
-              <%= f.collection_select :receiver_id, Provider.order(:first_name), :id, :name_and_email, :prompt => "Choose Your Therapist" %>
+            <% if current_user.type == "Client" %>
+              <div class="form-group">
+                <%= f.collection_select :receiver_id, Provider.order(:first_name), :id, :name_and_email, :prompt => "Choose Your Therapist" %>
+              </div>
+            <% else %>
+              <div class="form-group">
+              <%= f.text_field :receiver_id, class: "form-control", placeholder: "Clients email" %>
             </div>
+            <% end %>
             <div class="form-group">
               <%= f.text_field :subject, class: "form-control", placeholder: "Subject" %>
             </div>
@@ -97,14 +103,14 @@
       <div class="container">
            <div class="content-container clearfix">
                <div class="col-md-12">
-                   <h1 class="content-title">Sent Mail</h1>
+                   <h1 class="content-title">Sent Messages</h1>
                    
                    <input type="search" placeholder="Search Mail" class="form-control mail-search" />
                    
                    <ul class="mail-list">
                       <% @sent.each do |m| %>
                         <li>
-                          <a href="<%= root_path %>">
+                          <a href="<%= message_path(m) %>">
                             <span class="mail-sender"><%= first_and_last(m.receiver_id) %></span>
                             <span class="mail-subject"><%= m.subject %></span>
                             <span class="mail-message-preview"><%= m.body.truncate(10) %>...</span>
