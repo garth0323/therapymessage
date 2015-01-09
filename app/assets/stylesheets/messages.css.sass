@@ -6,15 +6,20 @@ body
 
 
 .navbar-default
-  background-color: #fff
+  background-color: #222334
   border-bottom-color: #E3E3E3
+  .navbar-nav > li > a
+    color: white
+    &:hover
+      background-color: white
+      color: $black
   .navbar-nav > .active > a
     background-color: transparent!important
     &:hover, &:focus
       background-color: transparent!important
   .btn-compose
     padding-right: 10px
-    border-right: 1px solid #F0F0F0
+    border-right: 0px solid #F0F0F0
 
 //Forms setup
 
