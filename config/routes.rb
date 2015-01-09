@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   # user_root_path to: 'messages#index'
   # after_sign_in_path_for to: 'messages#index'
   # after_sign_out_path_for to: 'pages#index'
-  resources :messages
+  resources :messages do
+    get :sent, on: :collection
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -4,11 +4,18 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = Message.where(receiver_id: current_user.id).order("created_at DESC")
-    @sent = Message.where(sender_id: current_user.id).order("created_at DESC")
   end
 
   def show
     @message = Message.where(id: params[:id]).first
+  end
+
+  def sent
+    @sent = Message.where(sender_id: current_user.id).order("created_at DESC")
+  end
+
+  def new
+    @message = Message.new
   end
 
   def create
