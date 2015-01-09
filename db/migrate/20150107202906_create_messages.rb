@@ -5,6 +5,7 @@ class CreateMessages < ActiveRecord::Migration
       t.text    :body
       t.integer :sender_id
       t.integer :receiver_id
+      t.boolean :archived, :default => false
 
       t.timestamps
     end

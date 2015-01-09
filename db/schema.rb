@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20150107202906) do
     t.text     "body"
     t.integer  "sender_id"
     t.integer  "receiver_id"
+    t.boolean  "archived",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

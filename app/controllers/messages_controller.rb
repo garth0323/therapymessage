@@ -2,8 +2,7 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @message = Message.new
-    @messages = Message.where(receiver_id: current_user.id).order("created_at DESC")
+    @messages = Message.where({receiver_id: current_user.id, archived: false}).order("created_at DESC")
   end
 
   def show
@@ -11,7 +10,7 @@ class MessagesController < ApplicationController
   end
 
   def sent
-    @sent = Message.where(sender_id: current_user.id).order("created_at DESC")
+    @sent = Message.where(sender_id: current_user.id, archived: false).order("created_at DESC")
   end
 
   def new
@@ -31,6 +30,13 @@ class MessagesController < ApplicationController
       redirect_to messages_path, notice: 'There was an error sending your message!'
     end
   end
+
+  def archive
+    @archived_sent = Message.where(sender_id: current_user.id, archived: true).order("created_at DESC")
+    @archive = Message.where(receiver_id: current_user.id, archived: true).order("created_at DESC")
+  end
+
+
 
   private
 

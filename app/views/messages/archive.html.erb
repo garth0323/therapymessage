@@ -1,0 +1,103 @@
+<%= render 'navigation' %>
+
+<div class="container">
+ <div class="content-container clearfix">
+    <div class="col-md-12">
+      <h1 class="content-title">Archived</h1>
+        <div class="tabbable-panel">
+        <div class="tabbable-line">
+          <ul class="nav nav-tabs ">
+            <li class="active">
+              <a href="#tab_default_1" data-toggle="tab">
+              Received messages </a>
+            </li>
+            <li>
+              <a href="#tab_default_2" data-toggle="tab">
+              Sent messages </a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab_default_1">
+              <ul class="mail-list">
+                <% @archive.each do |m| %>
+                  <li>
+                    <a href="<%= message_path(m) %>">
+                      <span class="mail-sender"><%= first_and_last(m.receiver_id) %></span>
+                      <span class="mail-subject"><%= m.subject %></span>
+                      <span class="mail-message-preview"><%= m.body.truncate(10) %>...</span>
+                    </a>
+                  </li>
+                <% end %>   
+              </ul>
+            </div>
+            <div class="tab-pane" id="tab_default_2">
+              <ul class="mail-list">
+                <% @archived_sent.each do |m| %>
+                  <li>
+                    <a href="<%= message_path(m) %>">
+                      <span class="mail-sender"><%= first_and_last(m.receiver_id) %></span>
+                      <span class="mail-subject"><%= m.subject %></span>
+                      <span class="mail-message-preview"><%= m.body.truncate(10) %>...</span>
+                    </a>
+                  </li>
+                <% end %>   
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+  </div>
+</div>
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Default Tab</h3>
+
+      <div class="tabbable-panel">
+        <div class="tabbable-line">
+          <ul class="nav nav-tabs ">
+            <li class="active">
+              <a href="#tab_default_1" data-toggle="tab">
+              Received messages </a>
+            </li>
+            <li>
+              <a href="#tab_default_2" data-toggle="tab">
+              Sent messages </a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab_default_1">
+              <ul class="mail-list">
+                <% @archive.each do |m| %>
+                  <li>
+                    <a href="<%= message_path(m) %>">
+                      <span class="mail-sender"><%= first_and_last(m.receiver_id) %></span>
+                      <span class="mail-subject"><%= m.subject %></span>
+                      <span class="mail-message-preview"><%= m.body.truncate(10) %>...</span>
+                    </a>
+                  </li>
+                <% end %>   
+              </ul>
+            </div>
+            <div class="tab-pane" id="tab_default_2">
+              <ul class="mail-list">
+                <% @archive.each do |m| %>
+                  <li>
+                    <a href="<%= message_path(m) %>">
+                      <span class="mail-sender"><%= first_and_last(m.receiver_id) %></span>
+                      <span class="mail-subject"><%= m.subject %></span>
+                      <span class="mail-message-preview"><%= m.body.truncate(10) %>...</span>
+                    </a>
+                  </li>
+                <% end %>   
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ -->

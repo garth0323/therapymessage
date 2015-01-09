@@ -25,3 +25,13 @@ Message.create(subject: 'Provider 1 Subject', body: 'Test 1 Body', sender_id: Pr
 Message.create(subject: 'Provider 2 Subject', body: 'Test 2 Body', sender_id: Provider.first.id, receiver_id: Client.last.id)
 Message.create(subject: 'Provider 3 Subject', body: 'Test 3 Body', sender_id: Provider.last.id, receiver_id: Client.first.id)
 Message.create(subject: 'Provider 4 Subject', body: 'Test 4 Body', sender_id: Provider.last.id, receiver_id: Client.last.id)
+
+Message.create(subject: 'Client 1 Subject', body: 'Test 1 Body', sender_id: Client.first.id, receiver_id: Provider.first.id, archived: true)
+Message.create(subject: 'Client 2 Subject', body: 'Test 2 Body', sender_id: Client.first.id, receiver_id: Provider.last.id, archived: true)
+Message.create(subject: 'Client 3 Subject', body: 'Test 3 Body', sender_id: Client.last.id, receiver_id: Provider.first.id, archived: true)
+Message.create(subject: 'Client 4 Subject', body: 'Test 4 Body', sender_id: Client.last.id, receiver_id: Provider.last.id, archived: true)
+
+Message.create(subject: 'Provider 1 Subject', body: 'Test 1 Body', sender_id: Provider.first.id, receiver_id: Client.first.id, archived: true)
+Message.create(subject: 'Provider 2 Subject', body: 'Test 2 Body', sender_id: Provider.first.id, receiver_id: Client.last.id, archived: true)
+Message.create(subject: 'Provider 3 Subject', body: 'Test 3 Body', sender_id: Provider.last.id, receiver_id: Client.first.id, archived: true)
+Message.create(subject: 'Provider 4 Subject', body: 'Test 4 Body', sender_id: Provider.last.id, receiver_id: Client.last.id, archived: true)
