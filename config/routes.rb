@@ -6,13 +6,15 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'pages#index'
-  # user_root_path to: 'messages#index'
-  # after_sign_in_path_for to: 'messages#index'
-  # after_sign_out_path_for to: 'pages#index'
   resources :messages do
     get :sent, on: :collection
   end
+
+  authenticated :user do
+    root to: "messages#index", as: :user
+  end
+
+  root to: 'pages#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

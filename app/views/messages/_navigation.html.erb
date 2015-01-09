@@ -22,12 +22,12 @@
                 <li><a href="<%= sent_messages_path %>" role="tab" >Sent messages</a>
 
                 </li>
-                <li><a href="#trash" role="tab" >Storage</a>
+                <li><a href="#trash" role="tab" >Archive</a>
 
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><%=link_to  current_user.first_name, messages_path %></li>
+                <li><%=link_to  current_user.first_name, edit_user_registration_path %></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
