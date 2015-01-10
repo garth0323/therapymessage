@@ -4,7 +4,7 @@
 <div class="container">
   <div class="content-container clearfix">
     <div class="col-md-12">
-      <% if @message.sender_id != current_user.id %>
+      <% if current_user.type == "Provider" && @message.sender_id != current_user.id %>
         <%= link_to new_message_path(receiver_id: @message.sender_id) do %>
           <span class="glyphicon glyphicon-share-alt">Reply</span>
         <% end %>
