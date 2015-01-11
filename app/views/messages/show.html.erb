@@ -5,13 +5,13 @@
   <div class="content-container clearfix">
     <div class="col-md-12">
       <% if current_user.type == "Provider" && @message.sender_id != current_user.id %>
-        <%= link_to new_message_path(receiver_id: @message.sender_id) do %>
+        <%= link_to new_message_path(receiver_id: @message.sender_id), class: "btn btn-primary btn-danger" do %>
           <span class="glyphicon glyphicon-share-alt">Reply</span>
         <% end %>
       <% end %>
       <% if @message.archived == false %>
-        <%= link_to ajax_archive_messages_path(id: @message.id), remote: true do %>
-          <span class="glyphicon glyphicon-trash pull-right">Archive</span> 
+        <%= link_to ajax_archive_messages_path(id: @message.id), class: "btn btn-primary btn-danger pull-right", remote: true do %>
+          <span class="glyphicon glyphicon-trash">Archive</span> 
         <% end %>
       <% end %>
       <h1 class="content-title">Message</h1>
