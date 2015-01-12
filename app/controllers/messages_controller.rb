@@ -29,6 +29,7 @@ class MessagesController < ApplicationController
       @message = Message.create(message_params)
     end
     if @message.save
+      MessageMailer.message_created_notification(current_user, @message).deliver!
       redirect_to messages_path, notice: 'Message was successfully sent!'
     else
       redirect_to messages_path, notice: 'There was an error sending your message!'

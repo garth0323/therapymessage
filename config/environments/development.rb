@@ -29,8 +29,8 @@ Rails.application.configure do
     :address => "smtp.mailgun.org",
     :port => 587,
     :domain => "therapymessges.com",
-    :user_name => "postmaster@MYDOMAIN.mailgun.org",
-    :password => "MYPASSWORD"
+    :user_name => "postmaster@therapymessages.com",
+    :password => Rails.application.secrets[:mailgun_password]
   }
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
