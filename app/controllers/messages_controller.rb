@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
   end
 
   def show
+    View.create(message_id: params[:id], user_id: current_user.id)
     @message = Message.where(id: params[:id]).first
   end
 
