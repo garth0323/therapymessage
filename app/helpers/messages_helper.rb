@@ -13,4 +13,13 @@ module MessagesHelper
     end
   end
 
+  def display_message_created(message_id)
+    message = Message.find message_id
+    if message.created_at.present?
+      "Created #{message.created_at.strftime('%A %d, %B')}"
+    else
+      " "
+    end
+  end
+
 end
