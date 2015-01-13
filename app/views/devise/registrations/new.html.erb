@@ -30,12 +30,12 @@
         <%= f.password_field :password_confirmation, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= radio_button_tag(:type, "provider") %>
-        <%= label_tag(:type_provider, "I am a therapist") %>
+        <%= f.radio_button(:type, "Provider") %>
+        <%= f.label(:type_provider, "I am a therapist") %>
       </div>
       <div class="form-group">
-        <%= radio_button_tag(:type, "client") %>
-        <%= label_tag(:type_client, "I am messaging my therapist") %>
+        <%= f.radio_button(:type, "Client") %>
+        <%= f.label(:type_client, "I want to message my therapist") %>
       </div>
       <%= f.submit t('.sign_up', :default => "Sign up"), class: "btn btn-primary" %>
     <% end %>
