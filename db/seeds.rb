@@ -7,13 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #clients
-Client.create(first_name: 'Garth', last_name: 'Gaughan', phone: '987654321', email: 'garth@tm.com', password: '12345678')
-Client.create(first_name: 'Charlie', last_name: 'Sampson', phone: '123654321', email: 'charlie@tm.com', password: '12345678')
+Client.create(first_name: 'Garth', last_name: 'Gaughan', phone: '987654321', email: 'garth@tm.com', password: '12345678', confirmed_at: Time.now)
+Client.create(first_name: 'Charlie', last_name: 'Sampson', phone: '123654321', email: 'charlie@tm.com', password: '12345678', confirmed_at: Time.now)
 
 
 #providers
-Provider.create(first_name: 'Teresa', last_name: 'Greth', phone: '123456789', email: 'teresa@tm.com', password: '12345678')
-Provider.create(first_name: 'Regina', last_name: 'Gutierrez', phone: '142537891', email: 'regina@tm.com', password: '12345678')
+Provider.create(first_name: 'Teresa', last_name: 'Greth', phone: '123456789', email: 'teresa@tm.com', password: '12345678', confirmed_at: Time.now)
+Provider.create(first_name: 'Regina', last_name: 'Gutierrez', phone: '142537891', email: 'regina@tm.com', password: '12345678', confirmed_at: Time.now)
 
 #messages
 Message.create(subject: 'Client 1 Subject', body: 'Test 1 Body', sender_id: Client.first.id, receiver_id: Provider.first.id)
