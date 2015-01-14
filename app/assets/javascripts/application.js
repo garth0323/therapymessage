@@ -15,8 +15,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require autocomplete-rails
+//= require growlyflash
 //for autosize
 //= require jquery.autosize
+
 
 /* smooth scrolling for scroll to top */
 $('.scroll-top').click(function(){

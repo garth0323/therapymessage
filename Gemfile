@@ -12,6 +12,7 @@ gem 'devise-bootstrap-views'
 gem 'rails4-autocomplete'
 gem 'autosize-rails'
 gem 'kaminari-bootstrap', '~> 3.0.1'
+gem 'growlyflash', '~> 0.5.0'
 
 gem 'jquery-rails'
 gem 'turbolinks'
