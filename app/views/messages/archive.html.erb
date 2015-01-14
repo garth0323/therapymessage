@@ -32,6 +32,7 @@
                 <% end %>   
               </ul>
             </div>
+            <%= paginate @archive %>
             <div class="tab-pane" id="tab_default_2">
               <ul class="mail-list">
                 <% @archived_sent.each do |m| %>
@@ -46,6 +47,7 @@
                 <% end %>   
               </ul>
             </div>
+            <%= paginate @archived_sent %>
           </div>
         </div>
       </div>

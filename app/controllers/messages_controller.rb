@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @messages = Message.where({receiver_id: current_user.id, archived: false}).order("created_at DESC")
+    @messages = Message.where({receiver_id: current_user.id, archived: false}).order("created_at DESC").page params[:page]
   end
 
   def show
@@ -37,8 +37,8 @@ class MessagesController < ApplicationController
   end
 
   def archive
-    @archived_sent = Message.where(sender_id: current_user.id, archived: true).order("created_at DESC")
-    @archive = Message.where(receiver_id: current_user.id, archived: true).order("created_at DESC")
+    @archived_sent = Message.where(sender_id: current_user.id, archived: true).order("created_at DESC").page params[:page]
+    @archive = Message.where(receiver_id: current_user.id, archived: true).order("created_at DESC").page params[:page]
   end
 
   def ajax_archive
