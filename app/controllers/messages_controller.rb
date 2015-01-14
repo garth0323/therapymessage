@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
   end
 
   def sent
-    @sent = Message.where(sender_id: current_user.id, archived: false).order("created_at DESC")
+    @sent = Message.where(sender_id: current_user.id, archived: false).order("created_at DESC").page params[:page]
   end
 
   def new
@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
       @message = Message.create(message_params)
     end
     if @message.save
-      MessageMailer.message_created_notification(current_user, @message).deliver!
+      # MessageMailer.message_created_notification(current_user, @message).deliver!
       redirect_to messages_path, notice: 'Message was successfully sent!'
     else
       redirect_to messages_path, notice: 'There was an error sending your message!'

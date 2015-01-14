@@ -1,6 +1,5 @@
 <%= render 'navigation' %>
 
-
 <div class="container">
   <div class="content-container clearfix">
     <div class="col-md-12">
@@ -18,20 +17,20 @@
         <form>
           <fieldset disabled>
             <div class="form-group">
-              <label for="disabledTextInput">Sender</label>
+              <label for="disabledTextInput" class="message-label">Sender</label>
               <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= first_and_last(@message.sender_id) %>">
             </div>
             <div class="form-group">
-              <label for="disabledTextInput">Recepient</label>
+              <label for="disabledTextInput" class="message-label">Recepient</label>
               <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= first_and_last(@message.receiver_id) %>">
             </div>
             <div class="form-group">
-              <label for="disabledTextInput">Subject</label>
+              <label for="disabledTextInput" class="message-label">Subject</label>
               <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= @message.subject %>">
             </div>
             <div class="form-group">
-              <label for="disabledTextInput">Body</label>
-              <input type="textarea" id="disabledTextInput" class="form-control" placeholder="<%= @message.body %>">
+              <label for="disabledTextInput" class="message-label">Message</label>
+              <textarea class="form-control" rows="20" id="disabledTextInput" placeholder="<%= @message.body %>"></textarea>
             </div>
             
           </fieldset>

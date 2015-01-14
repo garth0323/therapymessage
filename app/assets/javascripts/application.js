@@ -15,6 +15,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require autocomplete-rails
+//for autosize
+//= require jquery.autosize
 
 /* smooth scrolling for scroll to top */
 $('.scroll-top').click(function(){
@@ -42,8 +44,12 @@ $(document).ready(function(){
 });
 */
 /* limit flash duration */
-$('document').ready(function() {
-  setTimeout(function() {
-    $('.alert').slideUp();
-  }, 3000);
+// $('document').ready(function() {
+//   setTimeout(function() {
+//     $('.alert').slideUp();
+//   }, 3000);
+// });
+
+$(document).ready(function(){
+    $('textarea').autosize();    
 });

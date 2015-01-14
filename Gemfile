@@ -10,6 +10,8 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 gem 'devise-bootstrap-views'
 gem 'rails4-autocomplete'
+gem 'autosize-rails'
+gem 'kaminari-bootstrap', '~> 3.0.1'
 
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -18,3 +20,4 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'spring',        group: :development
 gem 'pry-rails', :group => :development
+gem 'puma'
