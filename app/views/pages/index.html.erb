@@ -1,7 +1,7 @@
 <div class="navbar navbar-fixed-top alt" data-spy="affix" data-offset-top="1000">
   <div class="container">
     <div class="navbar-header">
-      <a href="#" class="navbar-brand">Therapy Message</a>
+      <a href="#" class="navbar-brand">therapyMessages</a>
       <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -33,7 +33,7 @@
     <div class="row">
       <div class="col-md-7">
         <h1>Ease of Use</h1>
-        <p class="lead">Easy way for therapists and clients to message each other. Therapists and their clients can easily interact with each other in an appropriate, HIPPA compliant manner.</p>
+        <p class="lead">An easy way for therapists and clients to message each other. Therapists and their clients can easily interact with each other in an appropriate, HIPPA compliant manner.</p>
       </div>
       <div class="col-md-5">
         <h1 class="pull-right"><i class="icon-mobile-phone icon-3x"></i> <i class="icon-tablet icon-3x"></i> <i class="icon-laptop icon-3x"></i></h1>
@@ -84,7 +84,7 @@
 
 <div class="callout">
   <div class="vert">
-    <div class="col-md-12 text-center"><h2>Pricing.</h2></div>
+    <div class="col-md-12 text-center"><h1>Pricing</h1></div>
     <div class="col-md-12 text-center">&nbsp;</div>
     <div class="col-md-8 col-md-offset-2 text-center">
       <div class="row hidden-xs">
@@ -95,9 +95,12 @@
        <div class="col-sm-2"><img class="img-circle grayscale" src="http://api.randomuser.me/portraits/thumb/women/15.jpg"></div>  
        <div class="col-sm-2"><img class="img-circle grayscale" src="http://api.randomuser.me/portraits/thumb/men/18.jpg"></div>
       </div>
-      <div class="col-md-12 text-center"><h4>Pricing for each message sent is $25</h4></div>
-      <ul>
-      </ul>
+      <div class="col-md-12 text-center"><h2>Each message sent is $25</h2></div>
+      <div class="col-md-12 text-center">
+        <h4>
+          Therapists put care and time into reading, contemplating, and responding to each message. Some cost of each message covers the cost of the service.
+        </h4>
+      </div>
     </div>
   </div>
 </div>
@@ -112,8 +115,8 @@
         <h1><i class="icon-plane icon-3x"></i></h1>
       </div>
       <div class="col-md-7">
-        <h1 class="pull-right">Privacy and Confidentiality</h1>
-        <p class="lead pull-right">Your messages and any identifiable information is always kept completely confidetial and will never be shared with anyone except your therapist.</p>
+        <h1 class="pull-right">Confidentiality</h1>
+        <p class="lead pull-right">Your messages and any identifiable information is always kept completely confidetial and will never be shared. All messages are private between client and therapist.</p>
       </div>
     </div>
   </div>
@@ -131,31 +134,18 @@
   
   <div class="row">
     <div class="col-sm-4 col-sm-offset-2">
+      <%= link_to new_user_session_path do %>
          <div class="panel panel-default">
-         <div class="panel-heading text-center"><h2><i class="glyphicon glyphicon-chevron-left"></i> Clients</h2></div>
-         <div class="panel-body text-center"><!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-          dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-          Aliquam in felis si. -->
-            <div class="row">&nbsp;</div>
-          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-lg btn-primary" %>
-          <%= link_to "Sign In", new_user_session_path, class: "btn btn-lg btn-primary" %> 
-          </div>
+         <div class="panel-heading text-center"><h2><i class="glyphicon glyphicon-chevron-left"></i> Sign In</h2></div>
          </div>
-  </div>
+      <% end %>
+    </div>
     <div class="col-sm-4">
+        <%= link_to new_user_registration_path do %>
          <div class="panel panel-default">
-         <div class="panel-heading text-center"><h2>Therapists <i class="glyphicon glyphicon-chevron-right"></i></h2></div>
-         <div class="panel-body text-center"><!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-          dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-          Aliquam in felis sit. -->
-           <div class="row">&nbsp;</div>
-          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-lg btn-primary" %>
-          <%= link_to "Sign In", new_user_session_path, class: "btn btn-lg btn-primary" %>  
-           
-          </div>
+         <div class="panel-heading text-center"><h2>Sign Up <i class="glyphicon glyphicon-chevron-right"></i></h2></div>
          </div>
+         <% end %>
   </div>
   </div>
 </div>
@@ -201,7 +191,7 @@
 
         <div class="well well-lg" id="mission">
           <h2 class="text-center">Mission Statement</h2>
-          <p>Therapy Message is built and operated by therapists for therapists and their clients. Therapy Message wants to be the primary company that therapists look to when communicating with their clients electronically.</p>
+          <p>therapyMessages is built and operated by therapists for therapists and their clients. therapyMessages wants to be the primary company that therapists look to when communicating with their clients electronically.</p>
         </div>
       </div>
     </div>
@@ -220,7 +210,7 @@
           <li><i class="icon-pinterest icon-2x"></i></li>
         </ul>
         <hr>
-        <p>Therapy Message ©2014</p>
+        <p>THERAPYMESSAGES ©2014</p>
       </div>
     </div>
   </div>
