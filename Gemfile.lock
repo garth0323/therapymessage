@@ -151,7 +151,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  autoprefixer-rails
+  autoprefixer-rails (= 4.0.2.2)
   autosize-rails
   bootstrap-sass (~> 3.3.1)
   coffee-rails (~> 4.0.0)
