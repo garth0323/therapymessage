@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  include PgSearch
+  multisearchable :against => [:first_name, :last_name]
+  
   TYPES = %w(Client Provider)
 
   devise :database_authenticatable, :registerable, :confirmable,

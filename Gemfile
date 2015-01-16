@@ -13,6 +13,7 @@ gem 'rails4-autocomplete'
 gem 'autosize-rails'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'growlyflash', '~> 0.5.0'
+gem 'pg_search'
 
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -23,8 +24,4 @@ group :development do
   gem 'spring'
   gem 'pry-rails'
   gem 'puma'
-end
-
-group :production do
-  gem 'pg'
 end
