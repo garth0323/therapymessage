@@ -2,7 +2,8 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @messages = Message.where({receiver_id: current_user.id, archived: false}).order("created_at DESC").page params[:page]
+    @messages = Message.inbox(current_user.id, params[:query]).order("created_at DESC").page params[:page]
+    # @messages = messages.text_search(params[:query]).page params[:page]
   end
 
   def show
