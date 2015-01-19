@@ -2,29 +2,28 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @messages = Message.inbox(current_user.id, params[:query]).order("created_at DESC").page params[:page]
+    @messages = Message.inbox(current_user.id).page params[:page]
     # @messages = messages.text_search(params[:query]).page params[:page]
   end
 
   def show
-    View.create(message_id: params[:id], user_id: current_user.id)
-    @message = Message.where(id: params[:id]).first
+    @message = Message.show_message(params[:id], current_user.id)
   end
 
   def sent
-    @sent = Message.where(sender_id: current_user.id, archived: false).order("created_at DESC").page params[:page]
+    @sent = Message.sent_box(current_user.id).page params[:page]
   end
 
   def new
     if params[:receiver_id].present?
-      @receiver = User.where(id: params[:receiver_id]).pluck(:email).first
+      @receiver = User.find_receiver(params[:receiver_id])
     end
     @message = Message.new
   end
 
   def create
     if current_user.type == "Provider"
-      receiver_id = User.where(email: params[:message][:receiver_id]).first.id
+      receiver_id = User.compose_user(params[:message][:receiver_id])
       @message = Message.create(body: params[:message][:body], subject: params[:message][:subject], sender_id: params[:message][:sender_id], receiver_id: receiver_id)
     else
       @message = Message.create(message_params)

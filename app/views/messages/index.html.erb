@@ -4,12 +4,7 @@
   <div class="content-container clearfix">
     <div class="col-md-12">
       <h1 class="content-title">Inbox</h1>
-      <%= form_tag messages_path, method: :get do %>
-        <p>
-          <%= text_field_tag :query, params[:query], type:"search", class: "form-control mail-search", placeholder: "Search Mail" %>
-          <%= submit_tag "Search", name: nil, class: "hide-btn" %>
-        </p>
-      <% end %>
+      
       <ul class="mail-list">                       
         <% @messages.each do |m| %>
           <li>

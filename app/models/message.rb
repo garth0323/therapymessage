@@ -7,19 +7,26 @@ class Message < ActiveRecord::Base
 
   paginates_per 5
   
-  def self.inbox(id, query)
-    binding.pry
-    if query.present?
-      message = PgSearch.multisearch(query).where({receiver_id: id, archived: false})
-    else
-      message = Message.where({receiver_id: id, archived: false})
-    end
-    return message
+  def self.inbox(id)
+    where({receiver_id: id, archived: false}).order("created_at DESC")
   end
 
-  # def self.text_search(query)
-  #   binding.pry
-  #   where("subject @@ :q or body @@ :q", q: query)
-  #   User.where("first_name @@ :q or last_name @@ :q", q: query).id
-  # end
+  def self.show_message(id, user)
+    View.create(message_id: id, user_id: user)
+    where(id: id).first
+  end
+
+  def self.sent_box(id)
+    where(sender_id: id, archived: false).order("created_at DESC")
+  end
+
+  def compose
+    if params[:receiver_id].present?
+      @receiver = User.where(id: params[:receiver_id]).pluck(:email).first
+    end
+    Message.new
+  end
+
+  
+  
 end
