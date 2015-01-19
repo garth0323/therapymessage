@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   end
 
   root to: 'pages#index'
+  get '/therapist', to: 'pages#therapist'
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

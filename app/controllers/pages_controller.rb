@@ -4,4 +4,7 @@ class PagesController < ApplicationController
   def index
   end
 
+  def therapist
+  end
+
 end
