@@ -14,6 +14,7 @@ gem 'autosize-rails'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'growlyflash', '~> 0.5.0'
 gem 'sitemap'
+gem 'activeadmin', github: 'activeadmin'
 
 gem 'jquery-rails'
 gem 'turbolinks'
