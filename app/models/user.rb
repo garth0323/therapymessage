@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  include PgSearch
-  multisearchable :against => [:first_name, :last_name]
   
   TYPES = %w(Client Provider)
 

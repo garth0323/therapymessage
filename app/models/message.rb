@@ -1,6 +1,4 @@
 class Message < ActiveRecord::Base
-  include PgSearch
-  multisearchable :against => [:subject, :body]
 
   belongs_to :provider
   belongs_to :client
