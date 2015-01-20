@@ -9,5 +9,6 @@
 </head>
 <body>   
   <%= yield %>
+  <%= render 'google_analytics' if RAILS_ENV == 'production' %>
 </body>
 </html>
