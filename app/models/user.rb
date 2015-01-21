@@ -6,11 +6,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def self.find_receiver(id)
-    User.where(id: id).pluck(:email).first
+    rec = where(id: id).first
+    "#{rec.first_name} #{rec.last_name}, #{rec.email}"
   end
 
-  def selfcompose_user(id)
-    binding.pry
+  def self.compose_user(id)
     where(email: id).first.id
   end
 end

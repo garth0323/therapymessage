@@ -15,9 +15,7 @@ class MessagesController < ApplicationController
   end
 
   def new
-    if params[:receiver_id].present?
-      @receiver = User.find_receiver(params[:receiver_id])
-    end
+    @receiver = User.find_receiver(params[:receiver_id])
     @message = Message.new
   end
 
@@ -43,6 +41,10 @@ class MessagesController < ApplicationController
 
   def ajax_archive
     Message.where(id: params[:id]).update_all(archived: true)
+  end
+
+  def providers
+    @therapists = Provider.text_search(params[:query]).page params[:page]
   end
 
 

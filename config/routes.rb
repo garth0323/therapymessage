@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get :sent, on: :collection
     get :archive, on: :collection
     get :ajax_archive, on: :collection
+    get :providers, on: :collection
   end
 
   authenticated :user do
