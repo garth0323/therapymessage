@@ -1,5 +1,13 @@
 class User < ActiveRecord::Base
+
+  has_many :views
   
+  validates :first_name, presence: :true
+  validates :last_name, presence: :true
+  validates :email, presence: :true, uniqueness: :true
+  validates :phone, presence: :true, uniqueness: :true
+  validates :type, presence: :true
+
   TYPES = %w(Client Provider)
 
   devise :database_authenticatable, :registerable, :confirmable,

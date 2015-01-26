@@ -46,15 +46,16 @@ img.grayscale
   padding-top: 4%
   text-align: center
 
-.header .btn-lg
-  font-size: 28px
-  border-color: #eeeeee
-  padding: 15px
-  background-color: transparent
-  color: #ffffff
-  &:hover
-    background-color: #eeeeee
-    color: #777777
+.header
+  .btn-lg
+    font-size: 28px
+    border-color: #eeeeee
+    padding: 15px
+    background-color: transparent
+    color: #ffffff
+    &:hover
+      background-color: #eeeeee
+      color: #777777
 
 .navbar a
   color: #fff
@@ -71,20 +72,23 @@ img.grayscale
       background-color: #d46054
 
 .header
+  height: 60%
+  background: #f68076 url('http://www.bootply.com/assets/example/pt_topo_l.png') repeat center center fixed
   h1
-    font-size: 80px
+    font-size: 25px
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1)
     color: #431a6d
     color: #fff
-    margin-left: -5px
-    margin-bottom: 5px
+    margin: 50px 0 5px -5px
     text-transform: uppercase
+    @media only screen and (min-width : 768px)
+      font-size: 80px
+      margin-top: 0
   .lead
+    font-size: 15px
     color: #d46054
-    font-size: 25px
-  height: 60%
-  background: #f68076 url('http://www.bootply.com/assets/example/pt_topo_l.png') repeat center center fixed
-
+    @media only screen and (min-width : 768px)
+      font-size: 25px
 
 .alt
   background-color: #222334
