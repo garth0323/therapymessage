@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   end
 
   def self.compose_user(id)
-    where(email: id).first.id
+    mail = id.split
+    where(email: mail[2]).first.id
   end
 end

@@ -25,4 +25,5 @@ group :development do
   gem 'spring'
   gem 'pry-rails'
   gem 'puma'
+  gem "letter_opener"
 end

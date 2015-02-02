@@ -26,6 +26,16 @@ class Message < ActiveRecord::Base
     Message.new
   end
 
+  def self.sent_message_email(user, message)
+    rec = User.find(message.receiver_id)
+    if user.type == "Client"
+      MessageMailer.message_created_notification(user, message).deliver!
+      MessageMailer.message_received_notification(rec, message).deliver!
+    else
+      MessageMailer.message_responded_notification(rec, message).deliver!
+    end
+  end
+
   
   
 end

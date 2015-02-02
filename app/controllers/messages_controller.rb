@@ -20,14 +20,10 @@ class MessagesController < ApplicationController
   end
 
   def create
-    if current_user.type == "Provider"
-      receiver_id = User.compose_user(params[:message][:receiver_id])
-      @message = Message.create(body: params[:message][:body], subject: params[:message][:subject], sender_id: params[:message][:sender_id], receiver_id: receiver_id)
-    else
-      @message = Message.create(message_params)
-    end
+    receiver_id = User.compose_user(params[:message][:receiver_id])
+    @message = Message.create(body: params[:message][:body], subject: params[:message][:subject], sender_id: params[:message][:sender_id], receiver_id: receiver_id)
     if @message.save
-      # MessageMailer.message_created_notification(current_user, @message).deliver!
+      Message.sent_message_email(current_user, @message)
       redirect_to messages_path, notice: 'Message was successfully sent!'
     else
       redirect_to messages_path, notice: 'There was an error sending your message!'
