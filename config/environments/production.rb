@@ -50,9 +50,9 @@ Rails.application.configure do
     :authentication => :plain,
     :address => "smtp.mailgun.org",
     :port => 587,
-    :domain => "therapymessges.com",
-    :user_name => "postmaster@therapymessages.com",
-    :password => Rails.application.secrets[:mailgun_password]
+    :domain => "therapymessages.com",
+    :user_name => "postmaster@mg.therapymessages.com",
+    :password => ENV["MAILGUN_PASSWORD"]
   }
 
   # Prepend all log lines with the following tags.
