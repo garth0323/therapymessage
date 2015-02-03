@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :require_login
 
   def index
     @messages = Message.inbox(current_user.id).page params[:page]
@@ -48,6 +48,12 @@ class MessagesController < ApplicationController
 
   def message_params
     params.require(:message).permit!
+  end
+
+  def require_login
+    unless current_user
+      redirect_to root_path
+    end
   end
 
 end
