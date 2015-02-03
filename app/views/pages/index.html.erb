@@ -1,30 +1,12 @@
-<div class="navbar navbar-fixed-top alt" data-spy="affix" data-offset-top="1000">
-  <div class="container">
-    <div class="navbar-header">
-      <a href="#" class="navbar-brand">therapyMessages</a>
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-    </div>
-    <div class="collapse navbar-collapse" id="home-navbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://blog.therapymessages.com">Blog</a></li>
-        <li><a href="#sec1">SIGN IN</a></li>
-        <li><a href="#sec1">JOIN</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+<%= render '/pages/navigation' %>
 
 <div class="header alt vert">
   <div class="container">    
     <h1>Confidential E-Therapy</h1>
       <p class="lead">Messages sent between therapist and client.</p>
       <div>&nbsp;</div>
-      <a href="#sec1" class="btn btn-default btn-lg" href="#sec1">Sign Up</a>
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-default btn-lg" %>
+      <%= link_to "Sign In", new_user_session_path, class: "btn btn-default btn-lg" %>
   </div>
 </div>
 

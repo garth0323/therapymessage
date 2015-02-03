@@ -1,0 +1,48 @@
+.navbar.navbar-fixed-top.alt{"data-offset-top" => "1000", "data-spy" => "affix"}
+  .container
+    .navbar-header
+      %a.navbar-brand{:href => "#"} therapyMessages
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    #home-navbar.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{"data-target" => "#faqs", "data-toggle" => "modal", :href => "#faqModal"} FAQ's
+        / <li><a href="http://blog.therapymessages.com">Blog</a></li>
+        %li= link_to "Sign Up", new_user_registration_path
+        %li= link_to "Sign In", new_user_session_path
+/ Modal
+#faqs.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "false", "data-dismiss" => "modal", :type => "button"} X
+        %h4#myModalLabel.modal-title Frequently Asked Questions
+      .modal-body
+        .bs-example
+          #accordion.panel-group
+            .panel.panel-default
+              .panel-heading
+                %h4.panel-title
+                  %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseOne"} Is there a cost to sign up?
+              #collapseOne.panel-collapse.collapse
+                .panel-body
+                  %p
+                    Absolutely not! The client only pays when using the platform on a per message basis and there is no fees for the therapists other than the percentage taken to run the platform.
+            .panel.panel-default
+              .panel-heading
+                %h4.panel-title
+                  %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseTwo"} Who can see my messages?
+              #collapseTwo.panel-collapse.collapse
+                .panel-body
+                  %p
+                    All messages exchanged can only be seen by the therapist and the client. No one else can look at messages including other therapists, clients, or employees. Only sharing your password with someone would allow them to see your messages.
+      .modal-footer
+        %center
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} That's all the Questions
+
+
+         

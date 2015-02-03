@@ -68,7 +68,7 @@ img.grayscale
   background-color: #222334
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif
   li
-    a:hover, &.active
+    a:hover
       background-color: #d46054
 
 .header
@@ -97,8 +97,11 @@ img.grayscale
   &.affix
     background-color: #222334
   li
-    a:hover, &.active
+    a:hover, &.active,
       background-color: #d43f3a
+    a:focus
+      background-color: #222334
+      outline: 0
 
 .blurb
   padding: 120px 0
