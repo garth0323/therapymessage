@@ -5,11 +5,10 @@
     <div class="col-md-12">
       <h1 class="content-title">Inbox</h1>
 
-      
-      <ul class="mail-list">
-        <% if @messages.count == 0 %>
-          <% render 'welcome' %>
-        <% else %>
+      <% if @messages.count == 0 %>
+        <%= render 'welcome' %>
+      <% else %>
+        <ul class="mail-list">
           <% @messages.each do |m| %>
             <li>
               <a href="<%= message_path(m) %>">
