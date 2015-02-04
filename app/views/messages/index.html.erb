@@ -4,19 +4,24 @@
   <div class="content-container clearfix">
     <div class="col-md-12">
       <h1 class="content-title">Inbox</h1>
+
       
-      <ul class="mail-list">                       
-        <% @messages.each do |m| %>
-          <li>
-            <a href="<%= message_path(m) %>">
-              <span class="mail-sender"><%= first_and_last(m.sender_id) %></span>
-              <span class="mail-message-preview pull-right"><%= last_viewed(m.id) %></span>
-              <span class="mail-subject"><%= m.subject %></span>
-              <span class="mail-message-preview pull-right"><%= display_message_created(m.id) %></span>
-              <span class="mail-message-preview"><%= m.body.truncate(10) %>...</span>
-            </a>
-          </li>
-        <% end %>                                          
+      <ul class="mail-list">
+        <% if @messages.count == 0 %>
+          <% render 'welcome' %>
+        <% else %>
+          <% @messages.each do |m| %>
+            <li>
+              <a href="<%= message_path(m) %>">
+                <span class="mail-sender"><%= first_and_last(m.sender_id) %></span>
+                <span class="mail-message-preview pull-right"><%= last_viewed(m.id) %></span>
+                <span class="mail-subject"><%= m.subject %></span>
+                <span class="mail-message-preview pull-right"><%= display_message_created(m.id) %></span>
+                <span class="mail-message-preview"><%= m.body.truncate(10) %>...</span>
+              </a>
+            </li>
+          <% end %>
+        <% end %>                                        
       </ul>
     </div>
     <%= paginate @messages %>

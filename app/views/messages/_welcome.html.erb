@@ -1,0 +1,17 @@
+<% if current_user.type == "Client" %>
+  <ul class="mail-list">                       
+    <li>
+      <span class="mail-sender">You don't currently have any messages</span>
+      <span class="mail-subject">Click on compose and search for your therapist to send a message.</span>
+      <span class="mail-message-preview">You can check past messages in sent box and archive.</span>
+    </li>
+  </ul>
+<% else %>
+<% binding.pry %>
+  <li>
+    <p>Hello</p>
+    <span class="mail-sender">You don't currently have any messages</span>
+    <span class="mail-subject">You will be notified when you get a message, simply reply to that message.</span>
+    <span class="mail-message-preview">You can check past messages in sent box and archive.</span>
+  </li>
+<% end %>
