@@ -18,15 +18,10 @@
               </div>
             <% end %>
             <ul class="nav navbar-nav">
-                <li>
-                    <a href="<%= messages_path %>" role="tab" >Inbox</a>
-                </li>
-                <li><a href="<%= sent_messages_path %>" role="tab" >Sent messages</a>
-
-                </li>
-                <li><a href="<%= archive_messages_path %>" role="tab" >Archive</a>
-
-                </li>
+                <li><a href="<%= messages_path %>" role="tab" >Inbox</a></li>
+                <li><a href="<%= sent_messages_path %>" role="tab" >Sent messages</a></li>
+                <li><a href="<%= archive_messages_path %>" role="tab" >Archive</a></li>
+                <li><a href="<%= invitation_messages_path %>" role="tab" >Invite</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
