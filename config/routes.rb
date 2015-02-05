@@ -13,7 +13,10 @@ Rails.application.routes.draw do
     get :archive, on: :collection
     get :ajax_archive, on: :collection
     get :providers, on: :collection
+    get :invitation, on: :collection
   end
+
+  resources :invitations
 
   authenticated :user do
     root to: "messages#index", as: :user

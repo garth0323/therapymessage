@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
 
   def index
     @messages = Message.inbox(current_user.id).page params[:page]
+    @invitation = Invitation.new
     # @messages = messages.text_search(params[:query]).page params[:page]
   end
 
@@ -41,6 +42,11 @@ class MessagesController < ApplicationController
 
   def providers
     @therapists = Provider.text_search(params[:query]).page params[:page]
+  end
+
+  def invitation
+    @invitation = Invitation.new
+    # redirect_to messages_path, notice: 'Invitation was successfully sent!'
   end
 
 

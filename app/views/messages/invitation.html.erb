@@ -1,0 +1,22 @@
+<%= render 'navigation' %>
+
+<div class="container">
+  <div class="content-container clearfix">
+    <% if current_user.type == "Client" %>
+      <h1 class="content-title">Invite your therapist to join</h1>
+    <% else %>
+      <h1 class="content-title">Invite a client to message you</h1>
+    <% end %>
+    <div class="col-md-12">
+      <%= form_for @invitation, action: 'create' do |f| %>
+        <div class="form-group">
+          <%= f.text_field :email, class: "form-control", placeholder: "Place email here" %>  
+        </div>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+        <div class="btn-send">
+          <%= f.submit :Invite, class: "btn btn-danger btn-lg" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

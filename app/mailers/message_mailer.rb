@@ -15,12 +15,12 @@ class MessageMailer < ActionMailer::Base
   def message_received_notification(user, message)
     @user = user
     @message = message
-    mail to: user.email, subject: "You recieved a message on therapymessages. Check your inbox!"
+    mail to: user.email, subject: "You received a message on therapymessages. Check your inbox!"
   end
 
   def message_responded_notification(user, message)
     @user = user
     @message = message
-    mail to: user.email, subject: "You recieved a message on therapymessages. Check your inbox!"
+    mail to: user.email, subject: "You received a message on therapymessages. Check your inbox!"
   end
 end

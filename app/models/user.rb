@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :views
+  has_many :invitations
   
   validates :first_name, presence: :true
   validates :last_name, presence: :true
