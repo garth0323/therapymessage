@@ -12,8 +12,8 @@ Client.create(first_name: 'Charlie', last_name: 'Sampson', phone: '123654321', e
 
 
 #providers
-Provider.create(first_name: 'Teresa', last_name: 'Greth', phone: '123456789', email: 'teresa@tm.com', password: '12345678', confirmed_at: Time.now)
-Provider.create(first_name: 'Regina', last_name: 'Gutierrez', phone: '142537891', email: 'regina@tm.com', password: '12345678', confirmed_at: Time.now)
+Provider.create(first_name: 'Teresa', last_name: 'Greth', phone: '123456789', email: 'teresa@tm.com', state: 'AZ', description: 'I am therapist', password: '12345678', confirmed_at: Time.now)
+Provider.create(first_name: 'Regina', last_name: 'Gutierrez', phone: '142537891', email: 'regina@tm.com', state: 'CA', description: 'I am therapist too', password: '12345678', confirmed_at: Time.now)
 
 #messages
 Message.create(subject: 'Client 1 Subject', body: 'Test 1 Body', sender_id: Client.first.id, receiver_id: Provider.first.id)

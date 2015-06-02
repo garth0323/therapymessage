@@ -5,10 +5,12 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.string :state
+      t.text   :description
       t.string :phone
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string :type
+      t.attachment :avatar 
 
       ## Recoverable
       t.string   :reset_password_token

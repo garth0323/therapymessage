@@ -16,6 +16,8 @@ gem 'growlyflash', '~> 0.5.0'
 gem 'sitemap'
 gem 'activeadmin', github: 'activeadmin'
 gem 'haml'
+gem "paperclip", "~> 4.2"
+
 
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -28,3 +30,13 @@ group :development do
   gem 'puma'
   gem 'letter_opener'
 end
+
+group :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'rails_12factor'
+end
+
+ruby "2.1.2"

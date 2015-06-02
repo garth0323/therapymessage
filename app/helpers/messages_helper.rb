@@ -23,7 +23,7 @@ module MessagesHelper
   end
 
   def name_and_email(p)
-    "#{p.first_name} #{p.last_name}, #{p.email}"
+    "#{p.first_name} #{p.last_name}, #{p.description}"
   end
 
 end
