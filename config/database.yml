@@ -3,7 +3,7 @@ default: &default
   encoding: unicode
   database: therapymessages
   pool: 16
-  username: Garth
+  username: garthgaughan
   password: 
   host: localhost
   port: 5432
@@ -13,7 +13,7 @@ development:
   encoding: unicode
   database: therapymessages
   pool: 16
-  username: Garth
+  username: garthgaughan
   password: 
   host: localhost
   port: 5432
@@ -23,7 +23,7 @@ production:
   encoding: unicode
   database: therapymessages
   pool: 16
-  username: Garth
+  username: garthgaughan
   password: 
   host: localhost
   port: 5432
