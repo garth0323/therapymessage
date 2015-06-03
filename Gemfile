@@ -17,6 +17,7 @@ gem 'sitemap'
 gem 'activeadmin', github: 'activeadmin'
 gem 'haml'
 gem "paperclip", "~> 4.2"
+gem "figaro"
 
 
 gem 'jquery-rails'

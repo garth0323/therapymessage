@@ -52,7 +52,7 @@ Rails.application.configure do
     :port => 587,
     :domain => "therapymessages.com",
     :user_name => "postmaster@mg.therapymessages.com",
-    :password => ENV["MAILGUN_PASSWORD"]
+    :password => ENV["mailgun_password"]
   }
 
   # Prepend all log lines with the following tags.
