@@ -222,6 +222,7 @@ DEPENDENCIES
   activeadmin!
   autoprefixer-rails (= 4.0.2.2)
   autosize-rails
+  bcrypt
   bootstrap-sass (~> 3.3.1)
   coffee-rails (~> 4.0.0)
   devise
