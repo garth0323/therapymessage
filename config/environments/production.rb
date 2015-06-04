@@ -44,13 +44,13 @@ Rails.application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
-  config.action_mailer.default_url_options = { host: 'therapymessages.com' }
+  config.action_mailer.default_url_options = { host: 'therapymessages.com', :protocol => 'http' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :authentication => :plain,
     :address => "smtp.mailgun.org",
     :port => 587,
-    :domain => "therapymessages.com",
+    :domain => "www.therapymessages.com",
     :user_name => "postmaster@mg.therapymessages.com",
     :password => ENV["mailgun_password"]
   }
